@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Clock, Award, CheckCircle2, Calendar, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import heroImage from '../../imports/academy-hero.png';
+import heroVideo from '../../imports/veo-video-1777273171147.mp4';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 
@@ -39,7 +39,15 @@ export function EducationPage() {
       {/* Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="VIVIARTE Academy" className="w-full h-full object-cover" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <motion.div
