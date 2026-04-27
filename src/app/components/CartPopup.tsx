@@ -28,7 +28,7 @@ export function CartPopup({ isOpen, onClose }: CartPopupProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100]"
           />
 
           {/* Popup */}
@@ -37,7 +37,7 @@ export function CartPopup({ isOpen, onClose }: CartPopupProps) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 300 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 flex flex-col"
+            className="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-[100] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
