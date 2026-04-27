@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Clock, Award, CheckCircle2, Calendar, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import heroVideo from '../../imports/veo-video-1777273171147.mp4';
+import instructorKim from '../../imports/instructor-kim.png';
+import instructorLee from '../../imports/instructor-lee.png';
+import instructorPark from '../../imports/instructor-park.png';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 
@@ -15,9 +18,9 @@ const courseDurations = ['4주 / 32시간', '3주 / 24시간', '3주 / 24시간'
 const coursePrices = ['₩3,500,000', '₩2,800,000', '₩3,200,000'];
 
 const instructors = [
-  { name: '김서연', title: 'Master Director', specialty: '눈썹 반영구 전문', experience: '15년 경력', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80', achievements: ['국제 PMU 대회 금상', '일본 아카데미 초청 강사', '2,000+ 수강생 배출'] },
-  { name: '이지은', title: 'Lead Instructor', specialty: '아이라인 & 입술 전문', experience: '12년 경력', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80', achievements: ['한국 PMU 협회 인증', '도쿄 뷰티엑스포 시연', '1,500+ 수강생 배출'] },
-  { name: '박민지', title: 'Senior Instructor', specialty: '컬러리스트 & 디자인', experience: '10년 경력', image: 'https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?w=600&q=80', achievements: ['색채 심리학 전문가', '커스텀 색소 개발', '1,000+ 수강생 배출'] },
+  { name: '김서연', title: 'Master Director', specialty: '눈썹 반영구 전문', experience: '15년 경력', image: instructorKim, achievements: ['국제 PMU 대회 금상', '일본 아카데미 초청 강사', '2,000+ 수강생 배출'] },
+  { name: '이지은', title: 'Lead Instructor', specialty: '아이라인 & 입술 전문', experience: '12년 경력', image: instructorLee, achievements: ['한국 PMU 협회 인증', '도쿄 뷰티엑스포 시연', '1,500+ 수강생 배출'] },
+  { name: '박민지', title: 'Senior Instructor', specialty: '컬러리스트 & 디자인', experience: '10년 경력', image: instructorPark, achievements: ['색채 심리학 전문가', '커스텀 색소 개발', '1,000+ 수강생 배출'] },
 ];
 
 const testimonials = [
