@@ -43,20 +43,20 @@ export function EducationPage() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <motion.div
-          className="relative z-10 text-center text-white px-6 max-w-4xl"
+          className="relative z-10 text-center text-white px-4 sm:px-6 max-w-4xl pt-16 sm:pt-20"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <p className="text-sm tracking-[0.3em] mb-6">{t.heroLabel}</p>
-          <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight whitespace-pre-line">
+          <p className="text-xs sm:text-sm tracking-[0.3em] mb-4 sm:mb-6">{t.heroLabel}</p>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-light mb-4 sm:mb-6 tracking-tight whitespace-pre-line">
             {t.heroTitle}
           </h1>
-          <p className="text-xl md:text-2xl font-light mb-12 text-white/90">
+          <p className="text-base sm:text-xl md:text-2xl font-light mb-8 sm:mb-12 text-white/90">
             {t.heroSubtitle}
           </p>
           <motion.button
-            className="px-12 py-4 bg-white text-black hover:bg-black hover:text-white border border-white transition-all duration-300"
+            className="px-8 sm:px-12 py-3 sm:py-4 bg-white text-black hover:bg-black hover:text-white border border-white transition-all duration-300"
             whileHover={{ scale: 1.05 }}
           >
             {t.heroBtn}
