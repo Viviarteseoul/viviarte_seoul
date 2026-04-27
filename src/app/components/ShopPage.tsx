@@ -2,7 +2,7 @@ import { ShoppingCart, Check, Star, Shield, Truck, Package } from 'lucide-react'
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
 import { useCart } from '../context/CartContext';
-import heroImage from 'figma:asset/7604df1a4758cc92da4db5bb86b429c7241e9c3f.png';
+import heroVideo from '../../imports/veo-video-1777279180793.mp4';
 import shopProduct1 from '../../imports/shop-product-1.png';
 import shopProduct2 from '../../imports/shop-product-2.png';
 import shopProduct3 from '../../imports/shop-product-3.png';
@@ -32,14 +32,15 @@ export function ShopPage() {
   return (
     <div className="min-h-screen bg-white pt-20">
       <div className="relative h-[500px] overflow-hidden">
-        <motion.img
-          src={heroImage}
-          alt="Viviarte Seoul Skincare"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: 'easeInOut' }}
-        />
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
             <motion.div
