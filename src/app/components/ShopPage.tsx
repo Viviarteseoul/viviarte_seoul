@@ -32,18 +32,15 @@ export function ShopPage() {
   return (
     <div className="min-h-screen bg-white pt-20">
       <div className="relative h-[500px] overflow-hidden">
-        <motion.video
+        <video
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ scale: 2.0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 12, ease: 'easeInOut' }}
         >
           <source src={heroVideo} type="video/mp4" />
-        </motion.video>
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full flex items-center">
             <motion.div
