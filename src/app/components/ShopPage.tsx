@@ -38,7 +38,7 @@ export function ShopPage() {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ scale: 2.0 }}
+          initial={{ scale: 1.3 }}
           animate={{ scale: 1 }}
           transition={{ duration: 12, ease: 'easeInOut' }}
         >
