@@ -38,8 +38,8 @@ export function ShopPage() {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.12 }}
+          initial={{ scale: 1.3 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 12, ease: 'easeInOut' }}
         >
           <source src={heroVideo} type="video/mp4" />
