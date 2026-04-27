@@ -3,18 +3,24 @@ import { motion } from 'motion/react';
 import { useNavigate } from 'react-router';
 import { useCart } from '../context/CartContext';
 import heroImage from 'figma:asset/7604df1a4758cc92da4db5bb86b429c7241e9c3f.png';
+import shopProduct1 from '../../imports/shop-product-1.png';
+import shopProduct2 from '../../imports/shop-product-2.png';
+import shopProduct3 from '../../imports/shop-product-3.png';
+import shopProduct4 from '../../imports/shop-product-4.png';
+import shopProduct5 from '../../imports/shop-product-5.png';
+import shopProduct6 from '../../imports/shop-product-6.png';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 
 const featureIcons = [Shield, Truck, Package];
 
 const products = [
-  { id: 1, name: 'Radiance Serum', nameKr: '래디언스 세럼', price: '¥18,000', priceValue: 18000, rating: 4.9, reviews: 247, category: 'Serum', image: 'https://images.unsplash.com/photo-1767256046031-743d33937c4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBzZXJ1bSUyMGJvdHRsZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzc1MTAyMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-  { id: 2, name: 'Recovery Cream', nameKr: '리커버리 크림', price: '¥15,000', priceValue: 15000, rating: 4.8, reviews: 189, category: 'Cream', image: 'https://images.unsplash.com/photo-1764694071508-e4b1efcd39bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNyZWFtJTIwamFyJTIwbWluaW1hbHxlbnwxfHx8fDE3NzUxMDIzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080' },
-  { id: 3, name: 'Gentle Cleanser', nameKr: '젠틀 클렌저', price: '¥12,000', priceValue: 12000, rating: 4.7, reviews: 312, category: 'Cleanser', image: 'https://images.unsplash.com/photo-1772191530787-b9546da02fbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMHByb2R1Y3QlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzc1MTAyMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-  { id: 4, name: 'Complete Care Set', nameKr: '컴플리트 케어 세트', price: '¥39,000', priceValue: 39000, originalPrice: '¥45,000', rating: 5.0, reviews: 156, category: 'Set', badge: 'BEST', image: 'https://images.unsplash.com/photo-1773527142299-59863d536e1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwYmVhdXR5JTIwcHJvZHVjdHMlMjBkaXNwbGF5fGVufDF8fHx8MTc3NTEwMjMwNHww&ixlib=rb-4.1.0&q=80&w=1080' },
-  { id: 5, name: 'Healing Balm', nameKr: '힐링 밤', price: '¥14,500', priceValue: 14500, rating: 4.9, reviews: 203, category: 'Treatment', image: 'https://images.unsplash.com/photo-1772191530787-b9546da02fbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMHByb2R1Y3QlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzc1MTAyMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
-  { id: 6, name: 'Protection Sunscreen', nameKr: '프로텍션 선크림', price: '¥13,000', priceValue: 13000, rating: 4.8, reviews: 278, category: 'Suncare', image: 'https://images.unsplash.com/photo-1764694071508-e4b1efcd39bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNyZWFtJTIwamFyJTIwbWluaW1hbHxlbnwxfHx8fDE3NzUxMDIzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080' },
+  { id: 1, name: 'Radiance Serum', nameKr: '래디언스 세럼', price: '¥18,000', priceValue: 18000, rating: 4.9, reviews: 247, category: 'Serum', image: shopProduct1 },
+  { id: 2, name: 'Recovery Cream', nameKr: '리커버리 크림', price: '¥15,000', priceValue: 15000, rating: 4.8, reviews: 189, category: 'Cream', image: shopProduct2 },
+  { id: 3, name: 'Gentle Cleanser', nameKr: '젠틀 클렌저', price: '¥12,000', priceValue: 12000, rating: 4.7, reviews: 312, category: 'Cleanser', image: shopProduct3 },
+  { id: 4, name: 'Complete Care Set', nameKr: '컴플리트 케어 세트', price: '¥39,000', priceValue: 39000, originalPrice: '¥45,000', rating: 5.0, reviews: 156, category: 'Set', badge: 'BEST', image: shopProduct4 },
+  { id: 5, name: 'Healing Balm', nameKr: '힐링 밤', price: '¥14,500', priceValue: 14500, rating: 4.9, reviews: 203, category: 'Treatment', image: shopProduct5 },
+  { id: 6, name: 'Protection Sunscreen', nameKr: '프로텍션 선크림', price: '¥13,000', priceValue: 13000, rating: 4.8, reviews: 278, category: 'Suncare', image: shopProduct6 },
 ];
 
 export function ShopPage() {
