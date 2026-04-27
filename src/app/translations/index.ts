@@ -269,7 +269,7 @@ export const translations = {
       sortOptions: ['인기순', '가격 낮은순', '가격 높은순', '최신순'],
       buyBtn: '구매하기',
       ctaTitle: '시술 예약 시 무료 케어 키트 증정',
-      ctaDesc: 'VIVIARTE SEOUL에서 PMU 시술을 예약하시면\n전문 애프터케어 스타터 키트(¥8,000 상당)를 무료로 드립니다',
+      ctaDesc: 'VIVIARTE SEOUL에서 PMU 시술을 예약하시면\n전문 애프터케어 스타터 키트를 무료로 드립니다',
       ctaChecks: ['정품 인증', '피부과 테스트 완료', '무료 배송'],
       ctaBtn: '시술 예약하고 키트 받기 →',
       productDescriptions: [
@@ -633,7 +633,7 @@ export const translations = {
       sortOptions: ['人気順', '価格が安い順', '価格が高い順', '新着順'],
       buyBtn: '購入する',
       ctaTitle: '施術予約で無料ケアキットプレゼント',
-      ctaDesc: 'VIVIARTE SEOULでPMU施術をご予約いただくと\n専門アフターケアスターターキット(¥8,000相当)を無料プレゼント',
+      ctaDesc: 'VIVIARTE SEOULでPMU施術をご予約いただくと\n専門アフターケアスターターキットを無料プレゼント',
       ctaChecks: ['正規品認証', '皮膚科テスト済み', '送料無料'],
       ctaBtn: '施術を予約してキットを受け取る →',
       productDescriptions: [
