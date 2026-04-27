@@ -4,14 +4,8 @@ import { useState, useEffect } from 'react';
 import { LoginModal } from './LoginModal';
 import { CartPopup } from './CartPopup';
 import { useCart } from '../context/CartContext';
-
-const navLinks = [
-  { to: '/procedures', label: '시술 예약' },
-  { to: '/education', label: '교육 프로그램' },
-  { to: '/partnership', label: '파트너십' },
-  { to: '/about', label: '소개' },
-  { to: '/shop', label: '샵' },
-];
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 export function Header() {
   const location = useLocation();
@@ -20,17 +14,27 @@ export function Header() {
   const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { totalItems } = useCart();
+  const { lang, setLang } = useLanguage();
+  const t = translations[lang].header;
 
-  // 페이지 이동 시 모바일 메뉴 닫기
+  const navLinks = [
+    { to: '/procedures', label: t.procedures },
+    { to: '/education', label: t.education },
+    { to: '/partnership', label: t.partnership },
+    { to: '/about', label: t.about },
+    { to: '/shop', label: t.shop },
+  ];
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // 메뉴 열릴 때 스크롤 잠금
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
+
+  const toggleLang = () => setLang(lang === 'ko' ? 'ja' : 'ko');
 
   return (
     <>
@@ -70,21 +74,29 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <button className={`flex items-center gap-1.5 text-sm transition-colors ${
-                isHomePage && !isMobileMenuOpen
-                  ? 'text-white/70 hover:text-white'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}>
-                <Globe className="w-4 h-4" />
-                <span className="hidden sm:inline">KR / JP</span>
+              {/* 언어 전환 버튼 */}
+              <button
+                onClick={toggleLang}
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors px-2 py-1 rounded-full border ${
+                  isHomePage && !isMobileMenuOpen
+                    ? 'text-white/80 border-white/30 hover:bg-white/10'
+                    : 'text-gray-600 border-gray-300 hover:bg-gray-100'
+                }`}
+                aria-label="언어 전환"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>{lang === 'ko' ? 'KR' : 'JP'}</span>
+                <span className="opacity-40">|</span>
+                <span className="opacity-60">{lang === 'ko' ? 'JP' : 'KR'}</span>
               </button>
+
               <button
                 className={`hidden md:flex p-2 rounded-full transition-colors relative ${
                   isHomePage
                     ? 'hover:bg-white/10'
                     : 'hover:bg-gray-100'
                 }`}
-                aria-label="장바구니"
+                aria-label={t.cart}
                 onClick={() => setIsCartPopupOpen(true)}
               >
                 <ShoppingCart className={`w-5 h-5 ${isHomePage ? 'text-white' : 'text-black'}`} />
@@ -102,7 +114,7 @@ export function Header() {
                     : 'bg-black text-white hover:bg-gray-800'
                 }`}
               >
-                로그인
+                {t.login}
               </button>
               {/* 모바일 햄버거 버튼 */}
               <button
@@ -132,17 +144,11 @@ export function Header() {
               ))}
               <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-3 px-4">
                 <button
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
-                >
-                  <Globe className="w-4 h-4" />
-                  KR / JP
-                </button>
-                <button
                   className="flex items-center gap-2 text-sm text-gray-700 hover:text-black"
                   onClick={() => { setIsCartPopupOpen(true); setIsMobileMenuOpen(false); }}
                 >
                   <ShoppingCart className="w-4 h-4" />
-                  장바구니
+                  {t.cart}
                   {totalItems > 0 && (
                     <span className="ml-1 w-5 h-5 bg-black text-white text-xs rounded-full flex items-center justify-center">
                       {totalItems}
@@ -153,7 +159,7 @@ export function Header() {
                   onClick={() => { setIsLoginModalOpen(true); setIsMobileMenuOpen(false); }}
                   className="w-full mt-2 px-6 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
                 >
-                  로그인
+                  {t.login}
                 </button>
               </div>
             </nav>

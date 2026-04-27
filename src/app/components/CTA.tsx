@@ -1,6 +1,11 @@
 import { ArrowRight, Mail } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 export function CTA() {
+  const { lang } = useLanguage();
+  const t = translations[lang].cta;
+
   return (
     <section className="py-20 px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -12,21 +17,20 @@ export function CTA() {
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-5xl font-medium text-white mb-6">
-              지금 바로 시작하세요
+              {t.title}
             </h2>
-            <p className="text-xl text-white/90 mb-10">
-              한국과 일본을 연결하는 프리미엄 PMU 플랫폼<br />
-              VIVIARTE SEOUL과 함께 새로운 기회를 만들어가세요
+            <p className="text-xl text-white/90 mb-10 whitespace-pre-line">
+              {t.desc}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-black rounded-full hover:scale-105 transition-all flex items-center justify-center gap-2 group font-medium">
-                <span>시작하기</span>
+                <span>{t.startBtn}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full hover:bg-white/20 transition-all flex items-center justify-center gap-2 font-medium">
                 <Mail className="w-5 h-5" />
-                <span>문의하기</span>
+                <span>{t.contactBtn}</span>
               </button>
             </div>
           </div>
