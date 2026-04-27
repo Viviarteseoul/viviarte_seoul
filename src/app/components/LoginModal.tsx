@@ -1,5 +1,6 @@
 import { X, MessageCircle, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useEffect } from 'react';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -7,6 +8,11 @@ interface LoginModalProps {
 }
 
 export function LoginModal({ isOpen, onClose }: LoginModalProps) {
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
   const handleKakaoLogin = () => {
     console.log('카카오 로그인 시도');
     // 실제 카카오 로그인 로직
@@ -37,13 +43,13 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.2 }}
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-md relative overflow-hidden"
+              className="bg-white rounded-2xl shadow-2xl w-full max-w-md relative my-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
