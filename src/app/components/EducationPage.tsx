@@ -201,8 +201,8 @@ export function EducationPage() {
           <div className="grid md:grid-cols-3 gap-12">
             {instructors.map((instructor, index) => (
               <motion.div key={index} className="group" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
-                <div className="relative overflow-hidden mb-6 aspect-[3/4]">
-                  <img src={instructor.image} alt={instructor.name} className="w-full h-full object-cover transition-all duration-500" />
+                <div className="relative overflow-hidden mb-6 aspect-[3/4] bg-white">
+                  <img src={instructor.image} alt={instructor.name} className="w-full h-full object-contain transition-all duration-500" />
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
                   <h3 className="text-2xl font-light">{instructor.name}</h3>
