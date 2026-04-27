@@ -19,8 +19,8 @@ const coursePrices = ['₩3,500,000', '₩2,800,000', '₩3,200,000'];
 
 const instructors = [
   { name: '제유하', title: 'Master Director', specialty: '눈썹 반영구 전문', experience: '15년 경력', image: instructorKim, achievements: ['국제 PMU 대회 금상', '일본 아카데미 초청 강사', '2,000+ 수강생 배출'] },
-  { name: '김은아', title: 'Lead Instructor', specialty: '아이라인 & 입술 전문', experience: '12년 경력', image: instructorLee, achievements: ['한국 PMU 협회 인증', '도쿄 뷰티엑스포 시연', '1,500+ 수강생 배출'] },
-  { name: '미나미', title: 'Senior Instructor', specialty: '컬러리스트 & 디자인', experience: '10년 경력', image: instructorPark, achievements: ['색채 심리학 전문가', '커스텀 색소 개발', '1,000+ 수강생 배출'] },
+  { name: '김은아', title: 'Lead Instructor', specialty: '아이라인 & 입술 전문', experience: '12년 경력', image: instructorLee, achievements: ['한국 PMU 협회 인증', '한국 뷰티엑스포 시연', '1,500+ 수강생 배출'] },
+  { name: '미나미', title: 'Senior Instructor', specialty: '컬러리스트 & 디자인', experience: '10년 경력', image: instructorPark, achievements: ['일본 현지 감성 전문가', '커스텀 색소 개발', '1,000+ 수강생 배출'] },
 ];
 
 const testimonials = [
