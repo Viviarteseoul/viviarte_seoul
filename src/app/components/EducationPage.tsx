@@ -202,7 +202,7 @@ export function EducationPage() {
             {instructors.map((instructor, index) => (
               <motion.div key={index} className="group" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
                 <div className="relative overflow-hidden mb-6 aspect-[3/4]">
-                  <img src={instructor.image} alt={instructor.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                  <img src={instructor.image} alt={instructor.name} className="w-full h-full object-cover transition-all duration-500" />
                 </div>
                 <h3 className="text-2xl font-light mb-2">{instructor.name}</h3>
                 <p className="text-sm text-gray-600 mb-1">{instructor.title}</p>
