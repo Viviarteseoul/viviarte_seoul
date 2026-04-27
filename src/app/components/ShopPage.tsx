@@ -15,12 +15,12 @@ import { translations } from '../translations';
 const featureIcons = [Shield, Truck, Package];
 
 const products = [
-  { id: 1, name: 'Radiance Serum', nameKr: '래디언스 세럼', price: '¥18,000', priceValue: 18000, rating: 4.9, reviews: 247, category: 'Serum', image: shopProduct1 },
-  { id: 2, name: 'Recovery Cream', nameKr: '리커버리 크림', price: '¥15,000', priceValue: 15000, rating: 4.8, reviews: 189, category: 'Cream', image: shopProduct2 },
-  { id: 3, name: 'Gentle Cleanser', nameKr: '젠틀 클렌저', price: '¥12,000', priceValue: 12000, rating: 4.7, reviews: 312, category: 'Cleanser', image: shopProduct3 },
-  { id: 4, name: 'Complete Care Set', nameKr: '컴플리트 케어 세트', price: '¥39,000', priceValue: 39000, originalPrice: '¥45,000', rating: 5.0, reviews: 156, category: 'Set', badge: 'BEST', image: shopProduct4 },
-  { id: 5, name: 'Healing Balm', nameKr: '힐링 밤', price: '¥14,500', priceValue: 14500, rating: 4.9, reviews: 203, category: 'Treatment', image: shopProduct5 },
-  { id: 6, name: 'VIVIARTE MASK', nameKr: '비비아르떼 마스크', price: '¥13,000', priceValue: 13000, rating: 4.8, reviews: 278, category: 'Mask', badge: 'COMING SOON', image: shopProduct6 },
+  { id: 1, name: 'Radiance Serum', nameKr: '래디언스 세럼', price: '₩18,000', priceValue: 18000, rating: 4.9, reviews: 247, category: 'Serum', image: shopProduct1 },
+  { id: 2, name: 'Recovery Cream', nameKr: '리커버리 크림', price: '₩15,000', priceValue: 15000, rating: 4.8, reviews: 189, category: 'Cream', image: shopProduct2 },
+  { id: 3, name: 'Gentle Cleanser', nameKr: '젠틀 클렌저', price: '₩12,000', priceValue: 12000, rating: 4.7, reviews: 312, category: 'Cleanser', image: shopProduct3 },
+  { id: 4, name: 'Complete Care Set', nameKr: '컴플리트 케어 세트', price: '₩39,000', priceValue: 39000, originalPrice: '₩45,000', rating: 5.0, reviews: 156, category: 'Set', badge: 'BEST', image: shopProduct4 },
+  { id: 5, name: 'Healing Balm', nameKr: '힐링 밤', price: '₩14,500', priceValue: 14500, rating: 4.9, reviews: 203, category: 'Treatment', image: shopProduct5 },
+  { id: 6, name: 'VIVIARTE MASK', nameKr: '비비아르떼 마스크', price: '₩13,000', priceValue: 13000, rating: 4.8, reviews: 278, category: 'Mask', badge: 'COMING SOON', image: shopProduct6 },
 ];
 
 export function ShopPage() {
