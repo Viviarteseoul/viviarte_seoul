@@ -60,10 +60,10 @@ export function EducationPage() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <p className="text-xs sm:text-sm tracking-[0.3em] mb-4 sm:mb-6">{t.heroLabel}</p>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-light mb-4 sm:mb-6 tracking-tight whitespace-pre-line">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium mb-4 sm:mb-6 tracking-tight whitespace-pre-line">
             {t.heroTitle}
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl font-light mb-8 sm:mb-12 text-white/90">
+          <p className="text-base sm:text-xl md:text-2xl font-medium mb-8 sm:mb-12 text-white/90">
             {t.heroSubtitle}
           </p>
           <motion.button
@@ -81,14 +81,14 @@ export function EducationPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
               <p className="text-sm tracking-[0.3em] mb-4">{t.philLabel}</p>
-              <h2 className="text-4xl md:text-5xl font-light mb-6 whitespace-pre-line">{t.philTitle}</h2>
+              <h2 className="text-4xl md:text-5xl font-medium mb-6 whitespace-pre-line">{t.philTitle}</h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">{t.philDesc}</p>
               <div className="space-y-4">
                 {t.philPoints.map((point, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-medium mb-1">{point.title}</h3>
+                      <h3 className="font-semibold mb-1">{point.title}</h3>
                       <p className="text-gray-600">{point.desc}</p>
                     </div>
                   </div>
@@ -107,7 +107,7 @@ export function EducationPage() {
         <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4 text-gray-600">{t.programsLabel}</p>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.programsTitle}</h2>
+            <h2 className="text-4xl md:text-5xl font-medium mb-6">{t.programsTitle}</h2>
             <p className="text-xl text-gray-600">{t.programsSubtitle}</p>
           </motion.div>
 
@@ -143,7 +143,7 @@ export function EducationPage() {
 
             <div>
               <p className="text-sm tracking-[0.2em] mb-4 text-gray-500">{selectedCourse.subtitle}</p>
-              <h3 className="text-3xl font-light mb-4">{selectedCourse.title}</h3>
+              <h3 className="text-3xl font-medium mb-4">{selectedCourse.title}</h3>
               <p className="text-lg text-gray-600 mb-8">{selectedCourse.description}</p>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
@@ -151,28 +151,28 @@ export function EducationPage() {
                   <Clock className="w-5 h-5 text-gray-400" />
                   <div>
                     <p className="text-sm text-gray-500">{t.durationLabel}</p>
-                    <p className="font-medium">{courseDurations[selectedCourseIndex]}</p>
+                    <p className="font-semibold">{courseDurations[selectedCourseIndex]}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Award className="w-5 h-5 text-gray-400" />
                   <div>
                     <p className="text-sm text-gray-500">{t.priceLabel}</p>
-                    <p className="font-medium">{coursePrices[selectedCourseIndex]}</p>
+                    <p className="font-semibold">{coursePrices[selectedCourseIndex]}</p>
                   </div>
                 </div>
               </div>
 
               <div className="mb-8">
-                <h4 className="text-xl font-light mb-6 pb-4 border-b border-gray-200">{t.curriculumLabel}</h4>
+                <h4 className="text-xl font-medium mb-6 pb-4 border-b border-gray-200">{t.curriculumLabel}</h4>
                 <div className="space-y-6">
                   {selectedCourse.curriculum.map((item, index) => (
                     <motion.div key={index} className="flex gap-6" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
                       <div className="flex-shrink-0 w-16 h-16 border border-gray-300 flex items-center justify-center">
-                        <span className="text-2xl font-light">0{item.week}</span>
+                        <span className="text-2xl font-medium">0{item.week}</span>
                       </div>
                       <div className="flex-1">
-                        <h5 className="font-medium mb-2">{item.title}</h5>
+                        <h5 className="font-semibold mb-2">{item.title}</h5>
                         <p className="text-sm text-gray-600">{item.content}</p>
                       </div>
                     </motion.div>
@@ -194,7 +194,7 @@ export function EducationPage() {
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4">{t.instructorsLabel}</p>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.instructorsTitle}</h2>
+            <h2 className="text-4xl md:text-5xl font-medium mb-6">{t.instructorsTitle}</h2>
             <p className="text-xl text-gray-600">{t.instructorsSubtitle}</p>
           </motion.div>
 
@@ -205,7 +205,7 @@ export function EducationPage() {
                   <img src={instructor.image} alt={instructor.name} className="w-full h-full object-cover object-top transition-all duration-500" />
                 </div>
                 <div className="flex items-baseline gap-2 mb-2">
-                  <h3 className="text-2xl font-light">{instructor.name}</h3>
+                  <h3 className="text-2xl font-medium">{instructor.name}</h3>
                   <p className="text-sm text-gray-500">{instructor.title}</p>
                 </div>
                 <p className="text-sm text-gray-600 mb-4">{instructor.specialty} · {instructor.experience}</p>
@@ -228,7 +228,7 @@ export function EducationPage() {
         <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4">{t.testimonialsLabel}</p>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.testimonialsTitle}</h2>
+            <h2 className="text-4xl md:text-5xl font-medium mb-6">{t.testimonialsTitle}</h2>
             <p className="text-xl text-gray-600">{t.testimonialsSubtitle}</p>
           </motion.div>
 
@@ -244,7 +244,7 @@ export function EducationPage() {
                 <div className="flex items-center gap-4">
                   <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover" />
                   <div>
-                    <p className="font-medium">{testimonial.name}</p>
+                    <p className="font-semibold">{testimonial.name}</p>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export function EducationPage() {
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4">{t.regLabel}</p>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.regTitle}</h2>
+            <h2 className="text-4xl md:text-5xl font-medium mb-6">{t.regTitle}</h2>
             <p className="text-xl text-gray-600">{t.regSubtitle}</p>
           </motion.div>
 
@@ -267,9 +267,9 @@ export function EducationPage() {
             {t.regSteps.map((item, index) => (
               <motion.div key={index} className="text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
                 <div className="w-20 h-20 mx-auto mb-6 border-2 border-black rounded-full flex items-center justify-center">
-                  <span className="text-3xl font-light">{item.step}</span>
+                  <span className="text-3xl font-medium">{item.step}</span>
                 </div>
-                <h3 className="text-xl font-medium mb-3">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -282,7 +282,7 @@ export function EducationPage() {
         <div className="max-w-4xl mx-auto px-6">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4 text-gray-600">{t.faqLabel}</p>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.faqTitle}</h2>
+            <h2 className="text-4xl md:text-5xl font-medium mb-6">{t.faqTitle}</h2>
           </motion.div>
 
           <div className="space-y-4">
@@ -292,7 +292,7 @@ export function EducationPage() {
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full py-6 flex items-center justify-between text-left hover:text-gray-600 transition-colors"
                 >
-                  <span className="text-lg font-medium pr-4">{faq.q}</span>
+                  <span className="text-lg font-semibold pr-4">{faq.q}</span>
                   <ChevronRight className={`w-5 h-5 flex-shrink-0 transition-transform ${openFaq === index ? 'rotate-90' : ''}`} />
                 </button>
                 {openFaq === index && (
@@ -311,14 +311,14 @@ export function EducationPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="text-4xl font-light mb-6">{t.contactTitle}</h2>
+              <h2 className="text-4xl font-medium mb-6">{t.contactTitle}</h2>
               <p className="text-lg text-gray-600 mb-12">{t.contactSubtitle}</p>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <Phone className="w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium mb-1">{t.phoneLabel}</p>
+                    <p className="font-semibold mb-1">{t.phoneLabel}</p>
                     <p className="text-gray-600">+82-2-1234-5678</p>
                     <p className="text-sm text-gray-500">{t.phoneHours}</p>
                   </div>
@@ -326,14 +326,14 @@ export function EducationPage() {
                 <div className="flex items-start gap-4">
                   <Mail className="w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium mb-1">{t.emailLabel}</p>
+                    <p className="font-semibold mb-1">{t.emailLabel}</p>
                     <p className="text-gray-600">academy@viviarte-seoul.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium mb-1">{t.locationLabel}</p>
+                    <p className="font-semibold mb-1">{t.locationLabel}</p>
                     <p className="text-gray-600 whitespace-pre-line">{t.locationAddr}</p>
                   </div>
                 </div>
