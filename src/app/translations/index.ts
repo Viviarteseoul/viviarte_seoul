@@ -261,7 +261,7 @@ export const translations = {
       bestSellerBtn: '베스트 셀러',
       features: [
         { title: '정품 보장', description: '100% 정품 인증 제품' },
-        { title: '무료 배송', description: '일본 전역 무료 배송' },
+        { title: '무료 배송', description: '국내 무료 배송' },
         { title: '안전 포장', description: '깨짐 방지 특수 포장' },
       ],
       productsTitle: '전체 제품',
