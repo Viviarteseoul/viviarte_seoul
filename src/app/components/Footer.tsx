@@ -7,13 +7,17 @@ export function Footer({ overlay = false }: { overlay?: boolean }) {
   const t = translations[lang].footer;
 
   return (
-    <footer className={`py-12 border-t ${
+    <footer className={`border-t ${
       overlay
-        ? 'bg-transparent border-white/10'
-        : 'bg-white border-border'
+        ? 'py-8 sm:py-12 bg-transparent border-white/10'
+        : 'py-12 bg-white border-border'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`grid gap-8 mb-8 ${
+          overlay
+            ? 'grid-cols-2 lg:grid-cols-4'
+            : 'md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12'
+        }`}>
           <div>
             <div className="mb-6">
               <h3 className={`text-lg font-medium ${overlay ? 'text-white' : 'text-black'}`}>VIVIARTE SEOUL</h3>
