@@ -77,7 +77,7 @@ export function Hero() {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center center',
+              objectPosition: '30% center',
             }}
           >
             <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
