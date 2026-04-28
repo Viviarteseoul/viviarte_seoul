@@ -1,4 +1,10 @@
-html, body, #root {
+html {
+  width: 100%;
+  max-width: 100%;
+  /* overflow-x must NOT be set on html — it breaks position:fixed on iOS */
+}
+
+body, #root {
   overflow-x: hidden;
   max-width: 100%;
   width: 100%;
