@@ -65,23 +65,28 @@ export function Hero() {
           animate={{ opacity: isLoaded ? 1 : 0 }}
           transition={{ duration: 2, ease: 'easeInOut' }}
         >
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            playsInline
-            onEnded={handleVideoEnd}
-            style={{
-              position: 'absolute',
-              top: 0, left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: '8% center',
-            }}
-          >
-            <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
-          </video>
+          {/* overflow:hidden here clips the translate so it never causes layout overflow */}
+          <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleVideoEnd}
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                minWidth: '100%',
+                minHeight: '100%',
+                width: 'auto',
+                height: 'auto',
+              }}
+            >
+              <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
+            </video>
+          </div>
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)' }} />
         </motion.div>
       </div>
