@@ -5,7 +5,6 @@ import heroVideo1 from '../../imports/video-5acb0bce9a825adda2ffa07fbaa17593-1.m
 import heroVideo2 from '../../imports/veo-video-1775536229826.mp4';
 import heroVideo3 from '../../imports/veo-video-1775536694898.mp4';
 import bgmAudio from '../../imports/Marc-Andr_Hamelin_-_William_Bolcom_Three_Ghost_Rags_-_1._Graceful_Ghost_Rag_(SkySound.cc).mp3';
-import { Footer } from './Footer';
 
 const videoPlaylist = [heroVideo1, heroVideo2, heroVideo3];
 
@@ -46,91 +45,49 @@ export function Hero() {
   };
 
   return (
-    // Scroll container: tall enough so footer appears after scrolling
-    <div style={{ position: 'relative', height: '180vh', background: 'transparent' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100dvh', overflow: 'hidden' }}>
       <audio ref={audioRef} loop>
         <source src={bgmAudio} type="audio/mpeg" />
       </audio>
 
-      {/* Fixed video — 100dvw/100dvh fills the dynamic viewport precisely on iOS */}
-      <div style={{
-        position: 'fixed',
-        top: 0, left: 0,
-        width: '100dvw',
-        height: '100dvh',
-        overflow: 'hidden',
-        zIndex: 1,
-      }}>
-        <motion.div
-          style={{ position: 'absolute', inset: 0 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isLoaded ? 1 : 0 }}
-          transition={{ duration: 2, ease: 'easeInOut' }}
-        >
-          {/* overflow:hidden here clips the translate so it never causes layout overflow */}
-          <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-            <video
-              ref={videoRef}
-              autoPlay
-              muted
-              playsInline
-              onEnded={handleVideoEnd}
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                minWidth: '100%',
-                minHeight: '100%',
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-              }}
-            >
-              <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
-            </video>
-          </div>
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)' }} />
-        </motion.div>
-      </div>
-
-      {/* Progress indicators — z-index:20, above video */}
+      {/* Video — absolute fill, translate-center ensures even crop on all sides */}
       <motion.div
-        style={{
-          position: 'fixed',
-          bottom: '6rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 20,
-          display: 'flex',
-          gap: '0.5rem',
-        }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
+        style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoaded ? 1 : 0 }}
+        transition={{ duration: 2, ease: 'easeInOut' }}
       >
-        {videoPlaylist.map((_, index) => (
-          <div
-            key={index}
-            style={{
-              height: '4px',
-              borderRadius: '9999px',
-              transition: 'all 0.5s',
-              width: index === currentVideoIndex ? '3rem' : '2rem',
-              background: index === currentVideoIndex ? 'white' : 'rgba(255,255,255,0.4)',
-            }}
-          />
-        ))}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          onEnded={handleVideoEnd}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            minWidth: '100%',
+            minHeight: '100%',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        >
+          <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
+        </video>
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)' }} />
       </motion.div>
 
-      {/* Music button — z-index:20, above video */}
+      {/* Music button */}
       <motion.button
         onClick={toggleAudio}
         style={{
-          position: 'fixed',
+          position: 'absolute',
           top: '5rem',
           right: '1rem',
-          zIndex: 20,
+          zIndex: 10,
           width: '3rem',
           height: '3rem',
           borderRadius: '9999px',
@@ -153,15 +110,6 @@ export function Hero() {
           <Play style={{ width: '1.25rem', height: '1.25rem', color: 'white', marginLeft: '2px' }} />
         )}
       </motion.button>
-
-      {/* Footer — z-index:30, always above video, appears when scrolled to bottom */}
-      <div style={{
-        position: 'absolute',
-        bottom: 0, left: 0, right: 0,
-        zIndex: 30,
-      }}>
-        <Footer overlay />
-      </div>
     </div>
   );
 }

@@ -21,12 +21,13 @@ function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Home page content with overlay footer
+// Home page
 function Home() {
   return (
     <>
       <Header />
       <Hero />
+      <Footer />
     </>
   );
 }
