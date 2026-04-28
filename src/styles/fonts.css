@@ -14,10 +14,9 @@ body {
 }
 
 #root {
-  overflow-x: hidden;
-  max-width: 100%;
+  /* No overflow-x:hidden here — setting it would force overflow-y:auto,
+     making #root a fixed-height scroll container and blocking page scroll */
   width: 100%;
-  position: relative;
 }
 
 body, * {

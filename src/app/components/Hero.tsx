@@ -46,19 +46,21 @@ export function Hero() {
   };
 
   return (
-    <div className="relative h-[220vh] md:h-[150vh] bg-black">
+    // Scroll container: tall enough so footer appears after scrolling
+    <div style={{ position: 'relative', height: '180vh', background: 'transparent' }}>
       <audio ref={audioRef} loop>
         <source src={bgmAudio} type="audio/mpeg" />
       </audio>
 
-      {/* Video background — fixed inset-0 is the only reliable approach on iOS PWA.
-          overflow:hidden on this wrapper clips any internal animations to the viewport. */}
-      <div
-        className="fixed overflow-hidden"
-        style={{ top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }}
-      >
+      {/* Fixed video — z-index:1, inset-0 + overflow:hidden clips all internal content */}
+      <div style={{
+        position: 'fixed',
+        top: 0, left: 0, right: 0, bottom: 0,
+        overflow: 'hidden',
+        zIndex: 1,
+      }}>
         <motion.div
-          className="absolute inset-0"
+          style={{ position: 'absolute', inset: 0 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: isLoaded ? 1 : 0 }}
           transition={{ duration: 2, ease: 'easeInOut' }}
@@ -71,8 +73,7 @@ export function Hero() {
             onEnded={handleVideoEnd}
             style={{
               position: 'absolute',
-              top: 0,
-              left: 0,
+              top: 0, left: 0,
               width: '100%',
               height: '100%',
               objectFit: 'cover',
@@ -81,13 +82,21 @@ export function Hero() {
           >
             <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/30" />
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)' }} />
         </motion.div>
       </div>
 
-      {/* Video Progress Indicators */}
+      {/* Progress indicators — z-index:20, above video */}
       <motion.div
-        className="fixed bottom-24 sm:bottom-32 left-1/2 -translate-x-1/2 z-10 flex gap-2"
+        style={{
+          position: 'fixed',
+          bottom: '6rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 20,
+          display: 'flex',
+          gap: '0.5rem',
+        }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5 }}
@@ -95,31 +104,54 @@ export function Hero() {
         {videoPlaylist.map((_, index) => (
           <div
             key={index}
-            className={`h-1 rounded-full transition-all duration-500 ${
-              index === currentVideoIndex ? 'w-12 bg-white' : 'w-8 bg-white/40'
-            }`}
+            style={{
+              height: '4px',
+              borderRadius: '9999px',
+              transition: 'all 0.5s',
+              width: index === currentVideoIndex ? '3rem' : '2rem',
+              background: index === currentVideoIndex ? 'white' : 'rgba(255,255,255,0.4)',
+            }}
           />
         ))}
       </motion.div>
 
-      {/* Music Control Button */}
+      {/* Music button — z-index:20, above video */}
       <motion.button
         onClick={toggleAudio}
-        className="fixed top-20 sm:top-32 right-4 sm:right-6 lg:right-8 z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110 group"
+        style={{
+          position: 'fixed',
+          top: '5rem',
+          right: '1rem',
+          zIndex: 20,
+          width: '3rem',
+          height: '3rem',
+          borderRadius: '9999px',
+          background: 'rgba(255,255,255,0.1)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255,255,255,0.2)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
         aria-label={isPlaying ? 'Pause music' : 'Play music'}
       >
         {isPlaying ? (
-          <Pause className="w-5 h-5 text-white transition-transform group-hover:scale-110" />
+          <Pause style={{ width: '1.25rem', height: '1.25rem', color: 'white' }} />
         ) : (
-          <Play className="w-5 h-5 text-white ml-0.5 transition-transform group-hover:scale-110" />
+          <Play style={{ width: '1.25rem', height: '1.25rem', color: 'white', marginLeft: '2px' }} />
         )}
       </motion.button>
 
-      {/* Footer overlay at the bottom of the scroll container */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
+      {/* Footer — z-index:30, always above video, appears when scrolled to bottom */}
+      <div style={{
+        position: 'absolute',
+        bottom: 0, left: 0, right: 0,
+        zIndex: 30,
+      }}>
         <Footer overlay />
       </div>
     </div>
