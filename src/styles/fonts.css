@@ -4,7 +4,16 @@ html {
   /* overflow-x must NOT be set on html — it breaks position:fixed on iOS */
 }
 
-body, #root {
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  overscroll-behavior-x: none;
+  touch-action: pan-y pinch-zoom;
+}
+
+#root {
   overflow-x: hidden;
   max-width: 100%;
   width: 100%;

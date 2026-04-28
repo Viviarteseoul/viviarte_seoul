@@ -89,12 +89,7 @@ export function TestimonialSlider() {
   };
 
   return (
-    <motion.div 
-      className="py-20 bg-white"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.8 }}
-    >
+    <div className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-medium text-black mb-4">#VIVIARTE SEOUL</h2>
@@ -183,6 +178,6 @@ export function TestimonialSlider() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

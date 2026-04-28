@@ -95,7 +95,7 @@ export function EducationPage() {
                 ))}
               </div>
             </motion.div>
-            <motion.div className="relative h-[600px]" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+            <motion.div className="relative h-[600px]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
               <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Academy" className="w-full h-full object-cover" />
             </motion.div>
           </div>
@@ -340,7 +340,7 @@ export function EducationPage() {
               </div>
             </motion.div>
 
-            <motion.div className="bg-gray-50 p-8" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <motion.div className="bg-gray-50 p-8" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <form className="space-y-6">
                 <div>
                   <label className="block text-sm mb-2">{t.formName}</label>
