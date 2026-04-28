@@ -105,22 +105,22 @@ export function TestimonialSlider() {
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors"
             aria-label="Previous"
           >
-            <ChevronLeft className="w-6 h-6 text-black" />
+            <ChevronLeft className="w-5 h-5 text-black" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors"
             aria-label="Next"
           >
-            <ChevronRight className="w-6 h-6 text-black" />
+            <ChevronRight className="w-5 h-5 text-black" />
           </button>
 
           {/* Testimonial Cards */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden px-12">
             <div className="flex gap-6">
               <AnimatePresence initial={false} custom={direction} mode="popLayout">
                 {getVisibleTestimonials().map((testimonial) => (

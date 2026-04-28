@@ -12,7 +12,7 @@ export function IntroPage() {
   }, []);
 
   return (
-    <div className="h-screen w-screen bg-black relative overflow-hidden">
+    <div className="h-screen w-full bg-black relative overflow-hidden">
       {/* Cinematic Background Image - 15 Second Slow Zoom Out */}
       <motion.div 
         className="absolute inset-0 overflow-hidden"
