@@ -52,10 +52,12 @@ export function Hero() {
         <source src={bgmAudio} type="audio/mpeg" />
       </audio>
 
-      {/* Fixed video — z-index:1, inset-0 + overflow:hidden clips all internal content */}
+      {/* Fixed video — 100dvw/100dvh fills the dynamic viewport precisely on iOS */}
       <div style={{
         position: 'fixed',
-        top: 0, left: 0, right: 0, bottom: 0,
+        top: 0, left: 0,
+        width: '100dvw',
+        height: '100dvh',
         overflow: 'hidden',
         zIndex: 1,
       }}>
@@ -80,8 +82,9 @@ export function Hero() {
                 transform: 'translate(-50%, -50%)',
                 minWidth: '100%',
                 minHeight: '100%',
-                width: 'auto',
-                height: 'auto',
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
               }}
             >
               <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
