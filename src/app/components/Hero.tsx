@@ -45,40 +45,42 @@ export function Hero() {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100dvh', overflow: 'hidden' }}>
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '100dvh',
+      overflow: 'hidden',
+      backgroundColor: '#000',
+    }}>
       <audio ref={audioRef} loop>
         <source src={bgmAudio} type="audio/mpeg" />
       </audio>
 
-      {/* Video — absolute fill, translate-center ensures even crop on all sides */}
-      <motion.div
-        style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}
+      {/* Video fills section — object-fit:cover centers the crop automatically */}
+      <motion.video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        onEnded={handleVideoEnd}
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 2, ease: 'easeInOut' }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center center',
+        }}
       >
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          playsInline
-          onEnded={handleVideoEnd}
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            minWidth: '100%',
-            minHeight: '100%',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-        >
-          <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
-        </video>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)' }} />
-      </motion.div>
+        <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
+      </motion.video>
+
+      {/* Dark overlay */}
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)', zIndex: 1 }} />
 
       {/* Music button */}
       <motion.button
