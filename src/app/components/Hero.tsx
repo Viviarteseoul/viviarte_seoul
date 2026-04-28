@@ -70,10 +70,10 @@ export function Hero() {
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
+          width: '100dvw',
+          height: '100dvh',
           objectFit: 'cover',
-          objectPosition: 'center center',
+          objectPosition: '55% center',
         }}
       >
         <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
