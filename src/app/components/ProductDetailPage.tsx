@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { motion } from 'motion/react';
-import { Star, ShoppingCart, Heart, ChevronLeft, Check, Truck, Shield, Package, Minus, Plus } from 'lucide-react';
+import { Star, ShoppingCart, Heart, ChevronLeft, Truck, Shield, Package, Minus, Plus } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import shopProduct1 from '../../imports/shop-product-1.png';
+import shopProduct2 from '../../imports/shop-product-2.png';
+import shopProduct3 from '../../imports/shop-product-3.png';
+import shopProduct4 from '../../imports/shop-product-4.png';
+import shopProduct5 from '../../imports/shop-product-5.png';
+import shopProduct6 from '../../imports/shop-product-6.png';
 
 const products = [
   {
@@ -10,14 +16,10 @@ const products = [
     name: 'Radiance Serum',
     nameKr: '래디언스 세럼',
     category: 'Serum',
-    price: '¥18,000',
+    price: '₩18,000',
     priceValue: 18000,
-    image: 'https://images.unsplash.com/photo-1767256046031-743d33937c4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBzZXJ1bSUyMGJvdHRsZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzc1MTAyMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    images: [
-      'https://images.unsplash.com/photo-1767256046031-743d33937c4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBzZXJ1bSUyMGJvdHRsZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzc1MTAyMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1764694071508-e4b1efcd39bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNyZWFtJTIwamFyJTIwbWluaW1hbHxlbnwxfHx8fDE3NzUxMDIzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1772191530787-b9546da02fbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMHByb2R1Y3QlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzc1MTAyMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080'
-    ],
+    image: shopProduct1,
+    images: [shopProduct1],
     rating: 4.9,
     reviews: 247,
     description: 'PMU 시술 후 피부 재생 집중 케어',
@@ -32,13 +34,10 @@ const products = [
     name: 'Recovery Cream',
     nameKr: '리커버리 크림',
     category: 'Cream',
-    price: '¥15,000',
+    price: '₩15,000',
     priceValue: 15000,
-    image: 'https://images.unsplash.com/photo-1764694071508-e4b1efcd39bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNyZWFtJTIwamFyJTIwbWluaW1hbHxlbnwxfHx8fDE3NzUxMDIzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    images: [
-      'https://images.unsplash.com/photo-1764694071508-e4b1efcd39bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNyZWFtJTIwamFyJTIwbWluaW1hbHxlbnwxfHx8fDE3NzUxMDIzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1767256046031-743d33937c4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dHklMjBzZXJ1bSUyMGJvdHRsZSUyMGVsZWdhbnR8ZW58MXx8fHwxNzc1MTAyMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080'
-    ],
+    image: shopProduct2,
+    images: [shopProduct2],
     rating: 4.8,
     reviews: 189,
     description: '시술 부위 진정 및 보습 크림',
@@ -53,12 +52,10 @@ const products = [
     name: 'Gentle Cleanser',
     nameKr: '젠틀 클렌저',
     category: 'Cleanser',
-    price: '¥12,000',
+    price: '₩12,000',
     priceValue: 12000,
-    image: 'https://images.unsplash.com/photo-1772191530787-b9546da02fbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMHByb2R1Y3QlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzc1MTAyMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    images: [
-      'https://images.unsplash.com/photo-1772191530787-b9546da02fbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMHByb2R1Y3QlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzc1MTAyMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080'
-    ],
+    image: shopProduct3,
+    images: [shopProduct3],
     rating: 4.7,
     reviews: 312,
     description: '저자극 세안제, PMU 시술 후 사용 가능',
@@ -73,13 +70,11 @@ const products = [
     name: 'Complete Care Set',
     nameKr: '컴플리트 케어 세트',
     category: 'Set',
-    price: '¥39,000',
+    price: '₩39,000',
     priceValue: 39000,
-    originalPrice: '¥45,000',
-    image: 'https://images.unsplash.com/photo-1773527142299-59863d536e1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwYmVhdXR5JTIwcHJvZHVjdHMlMjBkaXNwbGF5fGVufDF8fHx8MTc3NTEwMjMwNHww&ixlib=rb-4.1.0&q=80&w=1080',
-    images: [
-      'https://images.unsplash.com/photo-1773527142299-59863d536e1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwYmVhdXR5JTIwcHJvZHVjdHMlMjBkaXNwbGF5fGVufDF8fHx8MTc3NTEwMjMwNHww&ixlib=rb-4.1.0&q=80&w=1080'
-    ],
+    originalPrice: '₩45,000',
+    image: shopProduct4,
+    images: [shopProduct4],
     rating: 5.0,
     reviews: 156,
     description: '시술 전후 완벽 케어 풀 세트',
@@ -88,19 +83,17 @@ const products = [
     howToUse: '클렌저 → 세럼 → 크림 순서로 사용합니다.',
     capacity: '세트 (클렌저 150ml + 세럼 30ml + 크림 50ml)',
     madeIn: '한국',
-    badge: 'BEST'
+    badge: 'BEST',
   },
   {
     id: 5,
     name: 'Healing Balm',
     nameKr: '힐링 밤',
     category: 'Treatment',
-    price: '¥14,500',
+    price: '₩14,500',
     priceValue: 14500,
-    image: 'https://images.unsplash.com/photo-1772191530787-b9546da02fbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMHByb2R1Y3QlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzc1MTAyMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080',
-    images: [
-      'https://images.unsplash.com/photo-1772191530787-b9546da02fbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBza2luY2FyZSUyMHByb2R1Y3QlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MXx8fHwxNzc1MTAyMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080'
-    ],
+    image: shopProduct5,
+    images: [shopProduct5],
     rating: 4.9,
     reviews: 203,
     description: '집중 보습 및 상처 치유 밤',
@@ -112,24 +105,23 @@ const products = [
   },
   {
     id: 6,
-    name: 'Protection Sunscreen',
-    nameKr: '프로텍션 선크림',
-    category: 'Suncare',
-    price: '¥13,000',
+    name: 'VIVIARTE MASK',
+    nameKr: '비비아르떼 마스크',
+    category: 'Mask',
+    price: '₩13,000',
     priceValue: 13000,
-    image: 'https://images.unsplash.com/photo-1764694071508-e4b1efcd39bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNyZWFtJTIwamFyJTIwbWluaW1hbHxlbnwxfHx8fDE3NzUxMDIzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    images: [
-      'https://images.unsplash.com/photo-1764694071508-e4b1efcd39bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNyZWFtJTIwamFyJTIwbWluaW1hbHxlbnwxfHx8fDE3NzUxMDIzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080'
-    ],
+    image: shopProduct6,
+    images: [shopProduct6],
     rating: 4.8,
     reviews: 278,
-    description: 'SPF 50+ 고밀착 자외선 차단제',
-    fullDescription: 'PMU 시술 부위의 색소 변화를 방지하기 위한 강력한 자외선 차단 기능을 제공합니다.',
-    ingredients: '징크옥사이드, 티타늄디옥사이드, 센텔라 추출물',
-    howToUse: '외출 30분 전 충분한 양을 도포하고, 2-3시간마다 재도포합니다.',
-    capacity: '50ml',
+    description: '비비아르떼 시그니처 마스크 시트',
+    fullDescription: 'VIVIARTE SEOUL이 직접 개발한 시그니처 마스크 시트입니다. 피부 진정과 보습에 최적화된 성분으로 PMU 시술 후 집중 케어를 제공합니다.',
+    ingredients: '정제수, 히알루론산, 나이아신아마이드, 알로에베라 추출물, 병풀 추출물',
+    howToUse: '세안 후 얼굴에 마스크를 밀착시켜 10-15분 후 제거합니다.',
+    capacity: '25ml × 5매',
     madeIn: '한국',
-  }
+    badge: 'COMING SOON',
+  },
 ];
 
 export function ProductDetailPage() {
