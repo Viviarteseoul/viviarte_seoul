@@ -2,26 +2,14 @@ import { useState } from 'react';
 import { Play, BookOpen, Award, Users, ChevronRight, RotateCcw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TestimonialSlider } from './TestimonialSlider';
-import lipImage1 from 'figma:asset/7e95ba7b90ab6efcbbc919535cc56033dcf112e8.png';
-import lipImage2 from 'figma:asset/df384868ee95c37e95388ed403808794282f005b.png';
-import eyebrowImage from 'figma:asset/7fd85e542b6e7522818ed74dcd7113623778bf20.png';
-import eyelinerImage from 'figma:asset/bae0c578ca478d67093562941f2a279352ae5a17.png';
+import procEyebrow from '../../imports/proc-eyebrow.png';
+import procLip from '../../imports/proc-lip.png';
+import procEyeliner from '../../imports/proc-eyeliner.png';
+import procHairline from '../../imports/proc-hairline.png';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 
-const procedureImages = [
-  eyebrowImage,
-  null,
-  eyelinerImage,
-  'https://images.unsplash.com/photo-1750857740018-a2acc16c37f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHdvbWFuJTIwc3RyYWlnaHQlMjBoYWlyJTIwZnJvbnQlMjB2aWV3fGVufDF8fHx8MTc3NTEwMTgzMXww&ixlib=rb-4.1.0&q=80&w=1080',
-];
-const procedureLipImages = [lipImage2, lipImage1];
-const procedureExtras = [
-  { imagePosition: '', imageScale: '' },
-  {},
-  { imagePosition: 'object-top', imageScale: 'scale-110' },
-  { imageScale: 'scale-200' },
-];
+const procedureImages = [procEyebrow, procLip, procEyeliner, procHairline];
 const prices = ['¥80,000~', '¥90,000~', '¥60,000~', '¥150,000~'];
 
 const featureIcons = [BookOpen, Award, Users];
@@ -279,27 +267,14 @@ export function ProceduresPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="relative h-64 overflow-hidden">
-                  {index === 1 ? (
-                    <div className="flex flex-col h-full">
-                      {procedureLipImages.map((img, imgIndex) => (
-                        <img
-                          key={imgIndex}
-                          src={img}
-                          alt={procedure.title}
-                          className="w-full h-1/2 object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <img
-                      src={procedureImages[index] as string}
-                      alt={procedure.title}
-                      className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${procedureExtras[index].imagePosition ?? ''} ${procedureExtras[index].imageScale ?? ''}`}
-                    />
-                  )}
+                  <img
+                    src={procedureImages[index]}
+                    alt={procedure.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-6 h-6 text-black ml-1" />
+                  <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-5 h-5 text-white ml-0.5" />
                   </button>
                 </div>
                 <div className="p-6">
