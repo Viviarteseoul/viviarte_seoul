@@ -50,6 +50,7 @@ export function Hero() {
       width: '100%',
       height: '100dvh',
       backgroundColor: '#000',
+      touchAction: 'pan-y',
     }}>
       <audio ref={audioRef} loop>
         <source src={bgmAudio} type="audio/mpeg" />
@@ -69,10 +70,13 @@ export function Hero() {
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100dvw',
-          height: '100dvh',
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          height: '100%',
           objectFit: 'cover',
-          objectPosition: '50% center',
+          objectPosition: '45% center',
+          display: 'block',
         }}
       >
         <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
