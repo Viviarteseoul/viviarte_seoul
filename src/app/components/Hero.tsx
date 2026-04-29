@@ -49,7 +49,6 @@ export function Hero() {
       position: 'relative',
       width: '100%',
       height: '100dvh',
-      overflow: 'hidden',
       backgroundColor: '#000',
     }}>
       <audio ref={audioRef} loop>
@@ -70,10 +69,10 @@ export function Hero() {
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
+          width: '100dvw',
+          height: '100dvh',
           objectFit: 'cover',
-          objectPosition: '40% center',
+          objectPosition: '50% center',
         }}
       >
         <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
