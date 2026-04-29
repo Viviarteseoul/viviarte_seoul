@@ -21,13 +21,12 @@ function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Home page
+// Home page — Footer is rendered inside Hero as overlay
 function Home() {
   return (
     <>
       <Header />
       <Hero />
-      <Footer />
     </>
   );
 }

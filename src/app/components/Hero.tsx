@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Play, Pause } from 'lucide-react';
+import { Footer } from './Footer';
 import heroVideo1 from '../../imports/video-5acb0bce9a825adda2ffa07fbaa17593-1.mp4';
 import heroVideo2 from '../../imports/veo-video-1775536229826.mp4';
 import heroVideo3 from '../../imports/veo-video-1775536694898.mp4';
@@ -45,19 +46,14 @@ export function Hero() {
   };
 
   return (
-    <div style={{
-      position: 'relative',
-      width: '100%',
-      height: '100dvh',
-      overflow: 'hidden',
-      backgroundColor: '#000',
-    }}>
+    <div className="h-[220vh] md:h-[150vh] bg-black relative">
       <audio ref={audioRef} loop>
         <source src={bgmAudio} type="audio/mpeg" />
       </audio>
 
+      {/* Fixed video — always fills viewport; tall container provides scroll space */}
       <motion.div
-        style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}
+        style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '100dvh', overflow: 'hidden', zIndex: 0 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 2, ease: 'easeInOut' }}
@@ -68,54 +64,33 @@ export function Hero() {
           muted
           playsInline
           onEnded={handleVideoEnd}
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            minWidth: '100%',
-            minHeight: '100%',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: '47% center',
-          }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '47% center' }}
         >
           <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
         </video>
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)' }} />
       </motion.div>
 
-      {/* Music button */}
+      {/* Music button — fixed, opacity-only animation (no x offset to prevent iOS overflow) */}
       <motion.button
         onClick={toggleAudio}
-        style={{
-          position: 'absolute',
-          top: '5rem',
-          right: '1rem',
-          zIndex: 10,
-          width: '3rem',
-          height: '3rem',
-          borderRadius: '9999px',
-          background: 'rgba(255,255,255,0.1)',
-          backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255,255,255,0.2)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-        }}
+        className="fixed top-20 sm:top-32 right-4 sm:right-8 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
         aria-label={isPlaying ? 'Pause music' : 'Play music'}
       >
         {isPlaying ? (
-          <Pause style={{ width: '1.25rem', height: '1.25rem', color: 'white' }} />
+          <Pause className="w-5 h-5 text-white" />
         ) : (
-          <Play style={{ width: '1.25rem', height: '1.25rem', color: 'white', marginLeft: '2px' }} />
+          <Play className="w-5 h-5 text-white ml-0.5" />
         )}
       </motion.button>
+
+      {/* Footer overlay — sits at the bottom of the 220vh scroll container */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <Footer overlay />
+      </div>
     </div>
   );
 }
