@@ -45,18 +45,18 @@ export function Hero() {
   };
 
   return (
+    {/* Flow spacer — takes up 100dvh so footer sits below the fold */}
     <div style={{
       position: 'relative',
       width: '100%',
       height: '100dvh',
       backgroundColor: '#000',
-      touchAction: 'pan-y',
     }}>
       <audio ref={audioRef} loop>
         <source src={bgmAudio} type="audio/mpeg" />
       </audio>
 
-      {/* Video fills section — object-fit:cover centers the crop automatically */}
+      {/* Fixed video — always fills viewport, scroll passes through to document */}
       <motion.video
         ref={videoRef}
         autoPlay
@@ -67,25 +67,23 @@ export function Hero() {
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 2, ease: 'easeInOut' }}
         style={{
-          position: 'absolute',
+          position: 'fixed',
           top: 0,
           left: 0,
-          right: 0,
-          bottom: 0,
           width: '100%',
           height: '100%',
           objectFit: 'cover',
           objectPosition: '45% center',
-          display: 'block',
+          zIndex: 0,
         }}
       >
         <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
       </motion.video>
 
-      {/* Dark overlay */}
+      {/* Dark overlay — absolute in spacer, scrolls away with hero */}
       <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.3)', zIndex: 1 }} />
 
-      {/* Music button */}
+      {/* Music button — absolute in spacer, scrolls away with hero */}
       <motion.button
         onClick={toggleAudio}
         style={{
