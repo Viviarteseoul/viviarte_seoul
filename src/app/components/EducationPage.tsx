@@ -7,12 +7,11 @@ import instructorLee from '../../imports/instructor-lee.png';
 import instructorPark from '../../imports/instructor-park.png';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
+import courseEyebrow from '../../imports/course-eyebrow.png';
+import courseEyeliner from '../../imports/course-eyeliner.png';
+import courseLip from '../../imports/course-lip.png';
 
-const courseImages = [
-  'https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=1200&q=80',
-  'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=1200&q=80',
-  'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&q=80',
-];
+const courseImages = [courseEyebrow, courseEyeliner, courseLip];
 const courseLevels = ['All Levels', 'Intermediate', 'Intermediate'];
 const courseDurations = ['4주 / 32시간', '3주 / 24시간', '3주 / 24시간'];
 const coursePrices = ['₩3,500,000', '₩2,800,000', '₩3,200,000'];
