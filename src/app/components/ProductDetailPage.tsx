@@ -106,7 +106,7 @@ const products = [
   {
     id: 6,
     name: 'VIVIARTE MASK',
-    nameKr: '비비아르떼 마스크',
+    nameKr: '',
     category: 'Mask',
     price: '₩13,000',
     priceValue: 13000,
