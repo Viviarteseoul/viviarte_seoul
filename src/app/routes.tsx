@@ -27,9 +27,7 @@ function Home() {
     <>
       <Header />
       <Hero />
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }
