@@ -29,19 +29,19 @@ export function IntroPage() {
         <div className="absolute inset-0 bg-black/40"></div>
       </motion.div>
 
-      {/* Logo Overlay at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 pb-20 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col items-center">
+      {/* Logo — centered, moved up from bottom */}
+      <div className="absolute inset-x-0 bottom-[28%] sm:bottom-[20%] z-10 px-6">
+        <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 1 }}
           >
-            <Link 
+            <Link
               to="/home"
               className="group relative inline-block cursor-pointer"
             >
-              <h1 className="text-white text-6xl md:text-8xl tracking-[0.2em] font-light transition-all duration-700 group-hover:opacity-80">
+              <h1 className="text-white text-5xl md:text-8xl tracking-[0.06em] font-light transition-all duration-700 group-hover:opacity-80 text-center">
                 VIVIARTE SEOUL
               </h1>
             </Link>
@@ -52,7 +52,7 @@ export function IntroPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 2.5 }}
-            className="mt-8 text-white/60 text-xs tracking-[0.3em] uppercase"
+            className="mt-6 text-white/60 text-xs tracking-[0.3em] uppercase"
           >
             Click to Enter
           </motion.p>
