@@ -19,7 +19,7 @@ export function MedicalTrust() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-black mb-4 font-medium">{t.label}</p>
-          <h2 className="text-3xl lg:text-4xl font-medium text-black mb-4">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-medium text-black mb-4 break-keep whitespace-pre-line">
             {t.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -56,11 +56,11 @@ export function MedicalTrust() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div>
+            <div className="text-center lg:text-left">
               <h3 className="text-xl sm:text-2xl font-medium text-black mb-4 sm:mb-6">
                 {t.certTitle}
               </h3>
-              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base whitespace-pre-line">
                 {t.certDesc}
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -90,7 +90,7 @@ export function MedicalTrust() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl font-medium text-black mb-4">
+            <h3 className="text-xl sm:text-2xl font-medium text-black mb-4 break-keep">
               {t.investTitle}
             </h3>
             <p className="text-gray-600 mb-8 leading-relaxed">

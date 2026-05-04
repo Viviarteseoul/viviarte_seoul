@@ -289,7 +289,7 @@ export const translations = {
     },
     medicalTrust: {
       label: '신뢰할 수 있는 K-뷰티 플랫폼',
-      title: '글로벌 기업과 투자자가 선택하는 이유',
+      title: '글로벌 기업과 투자자가\n선택하는 이유',
       subtitle: '엄격한 의료 기준과 검증된 전문가 네트워크로 안전하고 신뢰할 수 있는 서비스를 제공합니다',
       metrics: [
         { value: '100%', label: '의료진 자격 검증', description: '모든 파트너는 의료 자격증과 경력을 검증합니다' },
@@ -298,7 +298,7 @@ export const translations = {
         { value: '300%', label: '연간 성장률', description: '2024-2025 예약 증가율' },
       ],
       certTitle: '국제 인증 및 규제 준수',
-      certDesc: '한국과 일본의 의료법규를 준수하며, 국제 표준 인증을 획득하여 대기업 파트너십과 글로벌 투자에 적합한 플랫폼입니다.',
+      certDesc: '한국과 일본의 의료법규를 준수하며, 국제 표준 인증을 획득하여 대기업 파트너십과 글로벌 투자에\n적합한 플랫폼입니다.',
       certifications: [
         { name: '의료기기 인증', code: 'ISO 13485' },
         { name: '개인정보보호', code: 'ISO 27001' },
@@ -342,7 +342,7 @@ export const translations = {
     partners: {
       label: 'Our Partners',
       title: '파트너 네트워크',
-      subtitle: '한국과 일본을 연결하는 프리미엄 파트너들과 함께합니다',
+      subtitle: '한국과 일본을 연결하는 프리미엄 파트너들과\n함께합니다',
       partnerItems: [
         { name: '강남 뷰티 클리닉', location: '서울 강남구', specialties: ['아이라인', '눈썹', '립'] },
         { name: '유하 PMU 아카데미', location: '서울 청담동', specialties: ['교육', '시술', '컨설팅'] },

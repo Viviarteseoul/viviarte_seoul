@@ -25,7 +25,7 @@ export function Partners() {
           <h2 className="text-3xl lg:text-4xl font-medium text-black mb-4">
             {t.title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto whitespace-pre-line">
             {t.subtitle}
           </p>
         </div>
