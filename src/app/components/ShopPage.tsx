@@ -158,7 +158,7 @@ export function ShopPage() {
                       <span className="text-lg font-medium text-black">{product.price}</span>
                     </div>
                     <button
-                      onClick={() => { window.scrollTo(0, 0); navigate(`/shop/${product.id}`); }}
+                      onClick={() => { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; navigate(`/shop/${product.id}`); }}
                       className="px-6 py-2 bg-black text-white text-sm rounded-full hover:bg-gray-800 transition-colors"
                     >
                       {t.buyBtn}
