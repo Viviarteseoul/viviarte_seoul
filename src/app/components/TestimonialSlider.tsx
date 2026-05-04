@@ -40,10 +40,22 @@ const testimonials = [
   }
 ];
 
+function useCardsToShow() {
+  const [cardsToShow, setCardsToShow] = useState(
+    typeof window !== 'undefined' ? (window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3) : 3
+  );
+  useEffect(() => {
+    const update = () => setCardsToShow(window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3);
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+  return cardsToShow;
+}
+
 export function TestimonialSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const cardsToShow = 3;
+  const cardsToShow = useCardsToShow();
 
   // Auto-slide every 4 seconds
   useEffect(() => {
@@ -92,7 +104,7 @@ export function TestimonialSlider() {
     <div className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-medium text-black mb-4">#VIVIARTE SEOUL</h2>
+          <h2 className="text-2xl md:text-4xl font-medium text-black mb-4">#VIVIARTE SEOUL</h2>
           <p className="text-gray-600">From 593+ reviews</p>
         </div>
 
@@ -130,7 +142,7 @@ export function TestimonialSlider() {
                       x: { type: "spring", stiffness: 300, damping: 30 },
                       opacity: { duration: 0.2 }
                     }}
-                    className="flex-shrink-0 w-[calc(33.333%-16px)]"
+                    className={`flex-shrink-0 ${cardsToShow === 1 ? 'w-full' : cardsToShow === 2 ? 'w-[calc(50%-12px)]' : 'w-[calc(33.333%-16px)]'}`}
                   >
                     <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow">
                       <div className="relative aspect-[4/5] overflow-hidden">
