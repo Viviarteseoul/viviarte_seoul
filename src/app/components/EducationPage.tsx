@@ -133,8 +133,8 @@ export function EducationPage() {
             transition={{ duration: 0.5 }}
             className="grid lg:grid-cols-2 gap-12 items-start"
           >
-            <div className="relative h-[500px] overflow-hidden">
-              <img src={courseImages[selectedCourseIndex]} alt={selectedCourse.title} className="w-full h-full object-cover" />
+            <div className="relative h-[260px] sm:h-[380px] lg:h-[500px] overflow-hidden">
+              <img src={courseImages[selectedCourseIndex]} alt={selectedCourse.title} className="w-full h-full object-cover object-top" />
               <div className="absolute top-6 left-6 px-4 py-2 bg-black text-white text-sm">
                 {courseLevels[selectedCourseIndex]}
               </div>
