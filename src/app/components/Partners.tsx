@@ -72,18 +72,18 @@ export function Partners() {
           ))}
         </div>
 
-        <div className="bg-white p-12 rounded-3xl border border-gray-200">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="bg-white p-6 sm:p-12 rounded-3xl border border-gray-200">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full mb-6">
                 <Building2 className="w-4 h-4 text-black" />
                 <span className="text-sm text-black">{t.benefitsLabel}</span>
               </div>
 
-              <h3 className="text-3xl font-medium text-black mb-4 whitespace-pre-line">
+              <h3 className="text-2xl sm:text-3xl font-medium text-black mb-4 whitespace-pre-line">
                 {t.benefitsTitle}
               </h3>
-              <p className="text-lg text-gray-600 mb-8">{t.benefitsSubtitle}</p>
+              <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">{t.benefitsSubtitle}</p>
 
               <button className="px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-all hover:scale-105">
                 {t.applyBtn}

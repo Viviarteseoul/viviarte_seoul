@@ -170,21 +170,21 @@ export function ShopPage() {
           </div>
         </div>
 
-        <div className="mt-20 bg-black rounded-3xl p-12 text-center text-white">
-          <h3 className="text-2xl font-medium mb-4">{t.ctaTitle}</h3>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto whitespace-pre-line">
+        <div className="mt-20 bg-black rounded-3xl p-6 sm:p-12 text-center text-white">
+          <h3 className="text-xl sm:text-2xl font-medium mb-4">{t.ctaTitle}</h3>
+          <p className="text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto whitespace-pre-line text-sm sm:text-base">
             {t.ctaDesc}
           </p>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 flex-wrap">
             {t.ctaChecks.map((check) => (
               <div key={check} className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-green-400" />
+                <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="text-sm">{check}</span>
               </div>
             ))}
           </div>
           <button
-            className="mt-8 px-10 py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-all hover:scale-105"
+            className="mt-6 sm:mt-8 px-8 sm:px-10 py-3 sm:py-4 bg-white text-black rounded-full hover:bg-gray-100 transition-all hover:scale-105"
             onClick={() => navigate('/reservation')}
           >
             {t.ctaBtn}

@@ -75,7 +75,7 @@ export function EducationPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
@@ -102,7 +102,7 @@ export function EducationPage() {
       </section>
 
       {/* Courses */}
-      <section className="py-32 bg-white">
+      <section className="py-16 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4 text-gray-600">{t.programsLabel}</p>
@@ -189,7 +189,7 @@ export function EducationPage() {
       </section>
 
       {/* Instructors */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4">{t.instructorsLabel}</p>
@@ -223,7 +223,7 @@ export function EducationPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-16 md:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4">{t.testimonialsLabel}</p>
@@ -254,7 +254,7 @@ export function EducationPage() {
       </section>
 
       {/* Registration */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4">{t.regLabel}</p>
@@ -277,7 +277,7 @@ export function EducationPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 bg-white">
+      <section className="py-16 md:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div className="text-center mb-20" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-sm tracking-[0.3em] mb-4 text-gray-600">{t.faqLabel}</p>
@@ -306,7 +306,7 @@ export function EducationPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>

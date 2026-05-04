@@ -114,7 +114,7 @@ export function ProceduresPage() {
                   transition={{ duration: 0.3 }}
                   className="border border-gray-200 border-t-0"
                 >
-                  <div className="p-12">
+                  <div className="p-6 sm:p-12">
                     <div className="flex items-center justify-between mb-8">
                       <span className="text-sm tracking-wide">Q{currentQ + 1}</span>
                       <span className="text-xs text-gray-500">
@@ -187,15 +187,15 @@ export function ProceduresPage() {
               </div>
 
               <div className="border border-gray-200">
-                <div className="bg-black text-white p-12 text-center">
+                <div className="bg-black text-white p-8 sm:p-12 text-center">
                   <p className="text-xs tracking-[0.3em] mb-4 text-gray-400">{t.yourStyle}</p>
-                  <h2 className="text-5xl md:text-6xl font-light mb-3 italic">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-light mb-3 italic">
                     {t.results[getResult()].type}
                   </h2>
                   <p className="text-sm tracking-wide text-gray-400">{t.results[getResult()].sub}</p>
                 </div>
 
-                <div className="p-12">
+                <div className="p-6 sm:p-12">
                   <p className="text-base leading-relaxed text-gray-700 mb-8 pb-8 border-b border-gray-200">
                     {t.results[getResult()].desc}
                   </p>

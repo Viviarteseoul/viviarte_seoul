@@ -55,17 +55,17 @@ export function MedicalTrust() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-medium text-black mb-6">
+              <h3 className="text-xl sm:text-2xl font-medium text-black mb-4 sm:mb-6">
                 {t.certTitle}
               </h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
                 {t.certDesc}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {t.certifications.map((cert, index) => (
-                  <div key={index} className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                  <div key={index} className="p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
                     <p className="text-sm font-medium text-black">{cert.name}</p>
                     <p className="text-xs text-black mt-1">{cert.code}</p>
                   </div>
@@ -77,7 +77,7 @@ export function MedicalTrust() {
               <img
                 src="https://images.unsplash.com/photo-1611075383964-4717534173f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxjb3NtZXRpYyUyMHN1cmdlcnklMjBkb2N0b3IlMjBtZWRpY2FsJTIwZ2xvdmVzfGVufDF8fHx8MTc3NTAwODA3MXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Medical Professional"
-                className="w-full h-[400px] object-cover rounded-2xl shadow-xl grayscale"
+                className="w-full h-[220px] sm:h-[320px] lg:h-[400px] object-cover rounded-2xl shadow-xl grayscale"
               />
             </div>
           </div>

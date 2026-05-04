@@ -13,7 +13,7 @@ export function About() {
     <div className="min-h-screen bg-white pt-20">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-medium text-black mb-4">{t.title}</h1>
+          <h1 className="text-3xl sm:text-4xl font-medium text-black mb-4">{t.title}</h1>
           <p className="text-xl text-gray-600">{t.subtitle}</p>
         </div>
 
