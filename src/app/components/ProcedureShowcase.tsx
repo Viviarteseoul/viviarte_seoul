@@ -6,28 +6,28 @@ const procedures = [
     image: 'https://images.unsplash.com/photo-1735151225868-3f40c5b51396?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxMHx8cGVybWFuZW50JTIwbWFrZXVwJTIwZXllYnJvdyUyMHByb2NlZHVyZSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzc1MDA4MDcwfDA&ixlib=rb-4.1.0&q=80&w=1080',
     description: '자연스러운 눈썹 라인을 위한 전문 시술',
     duration: '2-3시간',
-    price: '¥80,000~'
+    price: '₩200,000~'
   },
   {
     title: '입술 반영구 (Lip PMU)',
     image: 'https://images.unsplash.com/photo-1677091508080-d6ee28356318?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw4fHxwZXJtYW5lbnQlMjBtYWtldXAlMjBleWVicm93JTIwcHJvY2VkdXJlJTIwbWVkaWNhbCUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzUwMDgwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
     description: '생기있는 입술 컬러와 윤곽 개선',
     duration: '2시간',
-    price: '¥90,000~'
+    price: '₩300,000~'
   },
   {
     title: '아이라인 (Eyeliner)',
     image: 'https://images.unsplash.com/photo-1746708810803-722593e53772?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw2fHxwZXJtYW5lbnQlMjBtYWtldXAlMjBleWVicm93JTIwcHJvY2VkdXJlJTIwbWVkaWNhbCUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzUwMDgwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
     description: '또렷한 눈매를 위한 정밀 시술',
     duration: '1.5시간',
-    price: '¥60,000~'
+    price: '₩300,000'
   },
   {
     title: '헤어라인 (Hairline)',
     image: 'https://images.unsplash.com/photo-1642630111276-821681d57568?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw5fHxwZXJtYW5lbnQlMjBtYWtldXAlMjBleWVicm93JTIwcHJvY2VkdXJlJTIwbWVkaWNhbCUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzUwMDgwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
     description: '자연스러운 헤어라인 교정',
     duration: '3-4시간',
-    price: '¥150,000~'
+    price: '₩450,000'
   }
 ];
 

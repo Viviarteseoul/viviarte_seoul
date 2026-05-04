@@ -10,7 +10,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 
 const procedureImages = [procEyebrow, procLip, procEyeliner, procHairline];
-const prices = ['¥80,000~', '¥90,000~', '¥60,000~', '¥150,000~'];
+const prices = ['₩200,000~', '₩300,000~', '₩300,000', '₩450,000'];
 
 const featureIcons = [BookOpen, Award, Users];
 
