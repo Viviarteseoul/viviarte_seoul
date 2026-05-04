@@ -1,4 +1,6 @@
 import { createBrowserRouter } from 'react-router';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 import { About } from './components/About';
 import { EducationPage } from './components/EducationPage';
 import { ProceduresPage } from './components/ProceduresPage';
@@ -10,10 +12,21 @@ import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import { IntroPage } from './components/IntroPage';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pathname]);
+  return null;
+}
+
 // Layout wrapper for consistent header/footer
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-white">
+      <ScrollToTop />
       <Header />
       <main>{children}</main>
       <Footer />
@@ -25,6 +38,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 function Home() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Hero />
     </>
