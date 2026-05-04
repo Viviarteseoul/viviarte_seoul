@@ -50,7 +50,7 @@ export function EducationPage() {
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/35" />
         </div>
         <motion.div
           className="relative z-10 text-center text-white px-4 sm:px-6 max-w-4xl pt-16 sm:pt-20"
@@ -62,7 +62,7 @@ export function EducationPage() {
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium mb-4 sm:mb-6 tracking-tight whitespace-pre-line">
             {t.heroTitle}
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl font-medium mb-8 sm:mb-12 text-white/90">
+          <p className="text-base sm:text-xl md:text-2xl font-medium mb-8 sm:mb-12 text-white/90 whitespace-pre-line">
             {t.heroSubtitle}
           </p>
           <motion.button

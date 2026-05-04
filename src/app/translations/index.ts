@@ -157,7 +157,7 @@ export const translations = {
     education: {
       heroLabel: 'VIVIARTE SEOUL ACADEMY',
       heroTitle: '세계적인 PMU 전문가로\n성장하는 여정',
-      heroSubtitle: '한국 최고 수준의 교육 프로그램으로 당신의 미래를 디자인합니다',
+      heroSubtitle: '한국 최고 수준의 교육 프로그램으로\n당신의 미래를 디자인합니다',
       heroBtn: '프로그램 둘러보기',
       philLabel: 'PHILOSOPHY',
       philTitle: '예술과 의학의\n완벽한 조화',
