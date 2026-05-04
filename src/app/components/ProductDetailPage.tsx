@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { motion } from 'motion/react';
 import { Star, ShoppingCart, Heart, ChevronLeft, Truck, Shield, Package, Minus, Plus } from 'lucide-react';
@@ -128,6 +128,8 @@ export function ProductDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => { window.scrollTo(0, 0); }, [id]);
   const [selectedImage, setSelectedImage] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
   const { addToCart } = useCart();
