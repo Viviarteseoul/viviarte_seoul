@@ -137,7 +137,12 @@ export function Header() {
                   key={to}
                   to={to}
                   className="text-base font-medium text-gray-800 hover:text-black hover:bg-gray-50 px-4 py-3 rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    window.scrollTo(0, 0);
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                  }}
                 >
                   {label}
                 </Link>

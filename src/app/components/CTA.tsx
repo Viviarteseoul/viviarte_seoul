@@ -16,20 +16,20 @@ export function CTA() {
           </div>
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-medium text-white mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-3xl lg:text-5xl font-medium text-white mb-3 sm:mb-6 break-keep">
               {t.title}
             </h2>
-            <p className="text-base sm:text-xl text-white/90 mb-6 sm:mb-10 whitespace-pre-line">
+            <p className="text-sm sm:text-xl text-white/90 mb-6 sm:mb-10 break-keep leading-relaxed">
               {t.desc}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-black rounded-full hover:scale-105 transition-all flex items-center justify-center gap-2 group font-medium">
+            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center">
+              <button className="w-full sm:w-auto px-8 py-3 sm:py-4 bg-white text-black rounded-full hover:scale-105 transition-all flex items-center justify-center gap-2 group font-medium text-sm sm:text-base">
                 <span>{t.startBtn}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full hover:bg-white/20 transition-all flex items-center justify-center gap-2 font-medium">
-                <Mail className="w-5 h-5" />
+              <button className="w-full sm:w-auto px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full hover:bg-white/20 transition-all flex items-center justify-center gap-2 font-medium text-sm sm:text-base">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{t.contactBtn}</span>
               </button>
             </div>
